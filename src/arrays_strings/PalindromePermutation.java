@@ -53,12 +53,16 @@ public class PalindromePermutation {
 
     private static int toggleBitVector(int checker, int i) {
         if (i == -1) return checker;
+
         int charIndex = 1 << i;
-        if ((checker & charIndex) != 0) {
-            checker &= ~charIndex;
-        } else {
-            checker |= charIndex;
-        }
+//        Old Way
+//        if ((checker & charIndex) != 0) {
+//            checker &= ~charIndex;
+//        } else {
+//            checker |= charIndex;
+//        }
+        // New Way
+        checker ^= charIndex;
         return checker;
     }
 

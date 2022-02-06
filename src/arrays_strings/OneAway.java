@@ -18,33 +18,59 @@ public class OneAway {
         System.out.println("pale, bake: " + oneOrZeroEditsAway("pale", "bake"));
     }
 
-    public static boolean oneOrZeroEditsAway(String str1, String str2) {
-        int editsAway = 0;
-        if (str1.length() == str2.length()) {
-            return editsAwayForSameLength(str1, str2, editsAway);
-        } else if (Math.abs(str1.length() - str2.length()) == 1) {
-            if (str1.length() > str2.length()) {
-                for (int i = 0; i < str1.length(); i++) {
-                    if (str1.charAt(i) != str2.charAt(i - editsAway)) editsAway++;
-                    if (editsAway > 1) return false;
-                }
+    public static boolean oneOrZeroEditsAway(String first, String second) {
+        if (first.length() == second.length()) {
+            return oneEditReplace(first, second);
+        } else if (Math.abs(first.length() - second.length()) == 1) {
+            if (first.length() > second.length()) {
+                return oneEditInsert(first, second);
             } else {
-                for (int i = 0; i < str2.length(); i++) {
-                    if (str2.charAt(i) != str1.charAt(i - editsAway)) editsAway++;
-                    if (editsAway > 1) return false;
-                }
+                return oneEditInsert(second, first);
             }
-            return true;
         }
-
         return false;
     }
 
-    private static boolean editsAwayForSameLength(String str1, String str2, int editsAway) {
+    private static boolean oneEditInsert(String s1, String s2) {
+        int editsAway = 0;
+        for (int i = 0; i < s1.length(); i++) {
+            int index = i - editsAway;
+            if (index >= s2.length() || s1.charAt(i) != s2.charAt(i - editsAway)) editsAway++;
+            if (editsAway > 1) return false;
+        }
+        return true;
+    }
+
+    private static boolean oneEditReplace(String str1, String str2) {
+        int editsAway = 0;
         for (int i = 0; i < str1.length(); i++) {
             if (str1.charAt(i) != str2.charAt(i)) editsAway++;
-            if (editsAway > 1) return true;
         }
-        return false;
+        return editsAway <= 1;
+    }
+
+    private static boolean oneEditAway2(String str1, String str2) {
+        if (Math.abs(str1.length() - str2.length()) > 1) return false;
+
+        String shortString = str1.length() < str2.length() ? str1 : str2;
+        String longString = str1.length() > str2.length() ? str1 : str2;
+
+        int sIndex = 0;
+        int lIndex = 0;
+        boolean foundDifference = false;
+        while (sIndex < shortString.length() && lIndex < longString.length()) {
+            if (shortString.charAt(sIndex) != longString.charAt(lIndex)) {
+                if (foundDifference) return false;
+                foundDifference = true;
+                if (shortString.length() == longString.length()) {
+                    sIndex++;
+                }
+            } else {
+                sIndex++;
+            }
+            lIndex++;
+        }
+
+        return true;
     }
 }
