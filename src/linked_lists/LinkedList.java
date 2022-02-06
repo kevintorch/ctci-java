@@ -4,8 +4,6 @@ package linked_lists;
 // FOLLOW UP
 // How would you solve this problem if a temporary buffer is not allowed?
 
-import java.util.HashSet;
-
 public class LinkedList {
 
     public static Node deleteNode(Node head, Object d) {
@@ -26,27 +24,8 @@ public class LinkedList {
         return head;
     }
 
-    public static void removeDuplicates(Node node) {
-        HashSet<Node> hashTable = new HashSet<>();
-
-        Node prev = null;
-        while (node != null) {
-            if (hashTable.contains(node)) {
-                prev.next = node.next;
-            } else {
-                hashTable.add(node);
-                prev = node;
-            }
-            node = node.next;
-        }
-    }
-
-    public static void deleteDuplicates(Node head) {
-
-    }
-
     public static class Node {
-        private final Object value;
+        private Object value;
         private Node next = null;
 
         public Node(Object value) {
@@ -63,6 +42,10 @@ public class LinkedList {
 
         public Object getValue() {
             return value;
+        }
+
+        public void setValue(Object value) {
+            this.value = value;
         }
 
         void appendToTail(Object data) {

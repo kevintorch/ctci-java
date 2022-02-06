@@ -22,6 +22,7 @@ public class RemoveDuplicates {
         }
     }
 
+    // Without memory.
     public static void removeDuplicates2(LinkedList.Node head) {
         LinkedList.Node headNode = head;
         while (headNode != null) {
