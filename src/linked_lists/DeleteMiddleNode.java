@@ -10,7 +10,14 @@ package linked_lists;
 
 public class DeleteMiddleNode {
     public static void main(String[] args) {
+        LinkedList.Node alphabets = LinkedList.createFromArray(new Character[]{'a', 'b', 'c', 'd', 'e', 'f'});
+        LinkedList.printList(alphabets);
+        LinkedList.Node kthToLast = KthToLastElement.kthToLast(alphabets, 4);
+        LinkedList.printList(kthToLast);
 
+        deleteMiddle(kthToLast);
+
+        LinkedList.printList(alphabets);
     }
 
     // One Problem: You Cannot delete last node.

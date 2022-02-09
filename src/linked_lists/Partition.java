@@ -12,10 +12,15 @@ package linked_lists;
 
 public class Partition {
     public static void main(String[] args) {
-
+        Integer[] partitionArray = {3, 5, 8, 5, 10, 2, 1};
+        LinkedList.Node partitionList = LinkedList.createFromArray(partitionArray);
+        LinkedList.printList(partitionList);
+        LinkedList.Node partition = partitionInPlace(partitionList, 5);
+        LinkedList.printList(partition);
     }
 
     // With Two extra List to hold lesser and greater elements.
+    // TODO:- Fix Bugs
     public static LinkedList.Node partition(LinkedList.Node head, int x) {
         LinkedList.Node beforeStart = null;
         LinkedList.Node beforeEnd = null;
@@ -59,6 +64,7 @@ public class Partition {
     }
 
     // Without Extra buffer (or within a list)
+    // TODO:- Fix Bugs
     public static LinkedList.Node partitionInPlace(LinkedList.Node node, int x) {
         LinkedList.Node head = node;
         LinkedList.Node tail = node;

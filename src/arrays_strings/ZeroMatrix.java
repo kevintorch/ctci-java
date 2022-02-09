@@ -8,7 +8,7 @@ public class ZeroMatrix {
     }
 
     // First Attempt
-    private static void setZeros(int[][] matrix) {
+    public static void setZeros(int[][] matrix) {
         boolean[] rows = new boolean[matrix.length];
         boolean[] columns = new boolean[matrix[0].length];
 
@@ -42,7 +42,7 @@ public class ZeroMatrix {
         }
     }
 
-    private static void zeroMatrix2(int[][] matrix) {
+    public static void zeroMatrix2(int[][] matrix) {
         boolean firstRowHasZero = false;
         boolean firstColumnHasZero = false;
 

@@ -4,7 +4,10 @@ package linked_lists;
 
 public class KthToLastElement {
     public static void main(String[] args) {
-
+        LinkedList.Node list = LinkedList.createFromArray(new Integer[]{23, 34, 3, 4, 5, 24, 11, 77});
+        LinkedList.printList(list);
+        LinkedList.Node node = kthToLast(list, 1);
+        LinkedList.printList(node);
     }
 
     // My Way.. Making Runner Node ahead of k times ahead of first node.
@@ -41,12 +44,12 @@ public class KthToLastElement {
         return node;
     }
 
-    public static int kthToLastElementRecurrence(LinkedList.Node head, int k) {
+    public static int printKthToLastElementRecurrence(LinkedList.Node head, int k) {
         if (head == null) {
             return 0;
         }
 
-        int index = kthToLastElementRecurrence(head.next(), k) + 1;
+        int index = printKthToLastElementRecurrence(head.next(), k) + 1;
         if (index == k) {
             System.out.println(head);
         }
