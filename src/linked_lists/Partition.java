@@ -10,13 +10,22 @@ package linked_lists;
 // Input: 3 -> 5 -> 8 --> 5 -> 10 --> 2 --> 1 [partition=5]
 // Output: 3 -> 1 --> 2 -> 10 -> 5 --> 5 -> 8
 
+import helpers.ArrayUtil;
+
 public class Partition {
     public static void main(String[] args) {
         Integer[] partitionArray = {3, 5, 8, 5, 10, 2, 1};
-        LinkedList.Node partitionList = LinkedList.createFromArray(partitionArray);
-        LinkedList.printList(partitionList);
-        LinkedList.Node partition = partitionInPlace(partitionList, 5);
+        ArrayUtil.print(partitionArray);
+//        ArrayUtil.reverse(partitionArray, 0, partitionArray.length);
+//        ArrayUtil.print(partitionArray);
+        LinkedList.Node head = LinkedList.createFromArray(partitionArray);
+//        LinkedList.Node partitionList = LinkedList.createFromArray(partitionArray);
+        LinkedList.printList(head);
+        LinkedList.Node partition = partition(head, 5);
         LinkedList.printList(partition);
+        LinkedList.Node head2 = LinkedList.createFromArray(partitionArray);
+        LinkedList.Node partitionInPlace = partitionInPlace(head2, 5);
+        LinkedList.printList(partitionInPlace);
     }
 
     // With Two extra List to hold lesser and greater elements.
