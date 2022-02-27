@@ -26,6 +26,17 @@ public class TreeNode {
         return n;
     }
 
+    public TreeNode getIthNode(int i) {
+        int leftSize = left == null ? 0 : left.size;
+        if (i < leftSize) {
+            return left != null ? left.getIthNode(i) : null;
+        } else if (i == leftSize) {
+            return this;
+        } else {
+            return right.getIthNode(i - (leftSize + 1));
+        }
+    }
+
     public void insertInOrder(int d) {
         TreeNode treeNode = new TreeNode(d);
         if (d <= data) {

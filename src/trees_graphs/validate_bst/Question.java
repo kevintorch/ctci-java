@@ -9,6 +9,12 @@ public class Question {
     static int index = 0;
     static Integer last_printed = null;
 
+    public static void main(String[] args) {
+        TreeNode root = new TreeNode(1);
+        root.setRight(new TreeNode(1));
+        System.out.println("is BST: " + checkBST2(root));
+    }
+
     public static boolean isBST(TreeNode root) {
         int[] array = new int[root.size()];
         copyBST(root, array);
