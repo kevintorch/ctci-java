@@ -112,7 +112,7 @@ public class LinkedList {
             n.next = tail;
         }
 
-        void appendToTail(Node tail) {
+        public void appendToTail(Node tail) {
             Node n = this;
             while (n.next != null) {
                 n = n.next;

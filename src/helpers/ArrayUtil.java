@@ -3,10 +3,15 @@ package helpers;
 
 public class ArrayUtil {
 
-    public static <T> T[] reverse(T[] a, int startIndex, int endIndex) {
-        if (a == null || endIndex - startIndex < 2) return a;
-        swap(a, startIndex, endIndex - 1);
-        return reverse(a, startIndex + 1, endIndex - 1);
+    public static <T> T[] reverse(T[] a) {
+        if (a == null) return null;
+        return reverse(a, 0, a.length - 1);
+    }
+
+    public static <T> T[] reverse(T[] a, int start, int end) {
+        if (a == null || end - start < 1) return a;
+        swap(a, start, end);
+        return reverse(a, start + 1, end - 1);
     }
 
     public static <T> void print(T[] a) {
@@ -29,9 +34,9 @@ public class ArrayUtil {
         return arrayString.toString();
     }
 
-    private static <T> void swap(T[] a, int e1, int e2) {
-        T temp = a[e1];
-        a[e1] = a[e2];
-        a[e2] = temp;
+    public static <T> void swap(T[] a, int i, int j) {
+        T temp = a[i];
+        a[i] = a[j];
+        a[j] = temp;
     }
 }
