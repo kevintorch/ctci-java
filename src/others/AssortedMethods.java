@@ -58,4 +58,12 @@ public class AssortedMethods {
         }
     }
 
+    public static int[] randomArray(int N, int min, int max) {
+        int[] array = new int[N];
+        for (int j = 0; j < N; j++) {
+            array[j] = randomIntInRange(min, max);
+        }
+        return array;
+    }
+
 }

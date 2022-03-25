@@ -10,6 +10,7 @@ package sorting_searching.missing_int;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Question {
@@ -17,9 +18,23 @@ public class Question {
     static byte[] bitField = new byte[(int) (numberOfInts / Byte.SIZE)];
     static String filename = "";
 
-    public static void main(String[] args) {
-        System.out.println(numberOfInts);
-        System.out.println(numberOfInts / 8);
+    public static void main(String[] args) throws IOException {
+//        var ref = new Object() {
+//            PrintWriter writer = null;
+//        };
+//        try {
+//            ref.writer = new PrintWriter(new FileWriter("output.txt"));
+//            RandomGenerator.getDefault().ints(1L << 32, 0, Integer.MAX_VALUE).forEach(i -> {
+//                ref.writer.println(i);
+//            });
+//        } finally {
+//            if (ref.writer != null) ref.writer.close();
+//        }
+
+    }
+
+    static void writeFile() throws Exception {
+
     }
 
     static void findOpenNumber() throws FileNotFoundException {
@@ -37,50 +52,5 @@ public class Question {
                 }
             }
         }
-    }
-
-    static void findOpenNumber2() throws FileNotFoundException {
-        Scanner in = new Scanner(new FileReader((filename)));
-
-    }
-
-    int[] getCountPerBlock(String filename, int rangeSize) throws FileNotFoundException {
-        int arraySize = Integer.MAX_VALUE / rangeSize + 1;
-        int[] blocks = new int[rangeSize];
-        Scanner in = new Scanner(new FileReader(filename));
-        while (in.hasNextInt()) {
-            int value = in.nextInt();
-            blocks[value / rangeSize]++;
-        }
-        in.close();
-        return blocks;
-    }
-
-    int findBlockWithMissing(int[] blocks, int rangeSize) {
-        for (int i = 0; i < blocks.length; i++) {
-            if (blocks[i] < rangeSize) {
-                return i;
-            }
-        }
-        return -1;
-    }
-
-    int findZero(byte b) {
-        for (int i = 0; i < Byte.SIZE; i++) {
-            if ((b & (1 << i)) == 0) {
-                return i;
-            }
-        }
-        return -1;
-    }
-
-    int findZero(byte[] bitVector) {
-        for (int i = 0; i < bitVector.length; i++) {
-            if (bitVector[i] != ~0) {
-                int bitIndex = findZero(bitVector[i]);
-                return i * Byte.SIZE + bitIndex;
-            }
-        }
-        return -1;
     }
 }
