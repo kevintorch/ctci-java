@@ -6,6 +6,7 @@ public class SumOfNNumbers {
         int n = 5;
         System.out.println("f of " + n + " is");
         System.out.println(f(n));
+
     }
 
     static int sum(int n) {
