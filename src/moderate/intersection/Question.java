@@ -3,6 +3,7 @@ package moderate.intersection;
 // Given two straight line segments (represented as a start point and an end point),
 // compute the point of intersection, if any.
 
+//TODO: Understand this
 public class Question {
     public static void main(String[] args) {
         Point zero = Point.ZERO;
