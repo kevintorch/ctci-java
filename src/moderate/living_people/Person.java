@@ -8,4 +8,12 @@ public class Person {
         this.birthYear = birthYear;
         this.deathYear = deathYear;
     }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "birthYear=" + birthYear +
+                ", deathYear=" + deathYear +
+                '}';
+    }
 }
