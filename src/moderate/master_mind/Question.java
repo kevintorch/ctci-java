@@ -16,9 +16,59 @@ package moderate.master_mind;
 // For example, if the actual solution is RGBY and you guess GGRR , you have one hit and one pseudo-hit
 //
 // Write a method that, given a guess and a solution, returns the number of hits and pseudo-hits.
-public class Question {
-    public static void main(String[] args) {
 
+// TODO:- Understand it.
+public class Question {
+    static final int MAX_COLORS = 4;
+
+    public static void main(String[] args) {
+        Result res = estimate("GGRR", "RGBY");
+        System.out.println(res.toString());
+    }
+
+    static Result estimate(String guess, String solution) {
+        if (guess.length() != solution.length()) return null;
+
+        Result result = new Result();
+        int[] frequencies = new int[MAX_COLORS];
+
+        /* Compute hits and build frequency table. */
+        for (int i = 0; i < guess.length(); i++) {
+            if (guess.charAt(i) == solution.charAt(i)) {
+                result.hits++;
+            } else {
+                /* Only increment the frequency table (which will be used for pseudo-hits)
+                 * if it's not a hit. If it's a hit, the slot has already been "used." */
+                int code = code(solution.charAt(i));
+                frequencies[code]++;
+            }
+        }
+
+        /* Compute pseudo-hits */
+        for (int i = 0; i < guess.length(); i++) {
+            int code = code(guess.charAt(i));
+            if (code >= 0 && frequencies[code] > 0 && guess.charAt(i) != solution.charAt(i)) {
+                result.pseudoHits++;
+                frequencies[code]--;
+            }
+        }
+
+        return result;
+    }
+
+    static int code(char c) {
+        switch (c) {
+            case 'B':
+                return 0;
+            case 'G':
+                return 1;
+            case 'R':
+                return 2;
+            case 'Y':
+                return 3;
+            default:
+                return -1;
+        }
     }
 
 
