@@ -2,7 +2,14 @@ package moderate.Q16_sub_sort;
 
 public class QuestionB {
     public static void main(String[] args) {
+        int[] array = {1, 2, 4, 7, 10, 11, 8, 12, 5, 6, 16, 18, 19};
 
+        long startTime = System.nanoTime();
+        Indices r = findUnsortedSequence(array);
+        long elapsedNanos = System.nanoTime();
+        System.out.println("elapsedNanos: " + (elapsedNanos - startTime));
+        System.out.println(r);
+        System.out.println(array[r.startIndex] + ", " + array[r.endIndex]);
     }
 
     public static Indices findUnsortedSequence(int[] array) {

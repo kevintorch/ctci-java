@@ -4,7 +4,10 @@ public class QuestionC {
     public static void main(String[] args) {
         int[] array = {1, 2, 4, 7, 10, 11, 8, 12, 5, 6, 16, 18, 19};
         int[] array2 = {5, 7, 12, 9, 43, 23, 55, 95};
+        long startTime = System.nanoTime();
         Indices r = findUnsortedSequence(array2);
+        long elapsedNanos = System.nanoTime();
+        System.out.println("elapsedNanos: " + (elapsedNanos - startTime));
         System.out.println(r);
         System.out.println(array2[r.startIndex] + ", " + array2[r.endIndex]);
     }

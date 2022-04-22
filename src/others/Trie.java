@@ -29,4 +29,8 @@ public class Trie {
         }
         return !exact || lastNode.isTerminates();
     }
+
+    public TrieNode getRoot() {
+        return root;
+    }
 }
