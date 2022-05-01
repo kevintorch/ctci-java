@@ -422,4 +422,11 @@ public class AssortedMethods {
         return wordList;
     }
 
+    public static String arrayToString(int[] array1) {
+        StringBuffer sb = new StringBuffer();
+        for (int a : array1) {
+            sb.append(a + " ");
+        }
+        return sb.toString();
+    }
 }

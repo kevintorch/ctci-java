@@ -4,7 +4,14 @@ import java.util.Arrays;
 
 public class QuestionC {
     public static void main(String[] args) {
-
+        int[] array1 = {1, 1, 1, 2, 2, 4};
+        int[] array2 = {3, 3, 3, 6};
+        int[] swaps = findSwapValues(array1, array2);
+        if (swaps == null) {
+            System.out.println("null");
+        } else {
+            System.out.println(swaps[0] + " " + swaps[1]);
+        }
     }
 
     public static int[] findSwapValues(int[] a, int[] b) {
