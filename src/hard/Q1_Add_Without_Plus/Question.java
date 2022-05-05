@@ -4,25 +4,26 @@ package hard.Q1_Add_Without_Plus;
 
 public class Question {
     public static void main(String[] args) {
-        System.out.println(add(5, 3));
+        int a = Integer.MAX_VALUE - 50;
+        int b = 92;
+        int sum = add(a, b);
+        int intendedSum = a + b;
+        if (sum != intendedSum) {
+            System.out.println("ERROR");
+        } else {
+            System.out.println("SUCCESS");
+        }
+        System.out.println(a + " + " + b + " = " + sum + " vs " + intendedSum);
     }
 
-    public static int add(int a, int b) { // a = 5, b = 3
+    public static int add(int a, int b) {
         while (b != 0) {
-            print(a, false);
-            print(b, false);
             int sum = a ^ b;
             int carry = (a & b) << 1;
-            print(sum, true);
-            print(carry, true);
             a = sum;
             b = carry;
         }
         return a;
-    }
-
-    private static void print(int n, boolean inBinary) {
-        System.out.println(inBinary ? Integer.toBinaryString(n) : n);
     }
 
     public static int addRecur(int a, int b) {
