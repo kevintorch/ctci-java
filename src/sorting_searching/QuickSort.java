@@ -1,10 +1,14 @@
 package sorting_searching;
 
-import helpers.ArrayUtil;
+import static helpers.ArrayUtil.swap;
 
 public class QuickSort {
     public static void main(String[] args) {
 
+    }
+
+    public static void quickSort(Integer[] arr) {
+        quickSort(arr, 0, arr.length - 1);
     }
 
     public static void quickSort(Integer[] arr, int leftIndex, int rightIndex) {
@@ -27,7 +31,7 @@ public class QuickSort {
             while (arr[right] > pivot) right--;
 
             if (left <= right) {
-                ArrayUtil.swap(arr, left, right);
+                swap(arr, left, right);
                 left++;
                 right--;
             }

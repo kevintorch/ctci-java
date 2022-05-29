@@ -9,6 +9,9 @@ public class Testing {
         List<String> list = Arrays.asList(a);
         List<String> strings = removeRange(new LinkedList<>(list), 0, 1);
         System.out.println("Removed Range: " + Arrays.toString(strings.toArray()));
+
+        int[] barChart = {2, 5, -1, 6, 0, 4};
+        printBarchart(barChart);
     }
 
     public static <T> List<T> removeRange(List<T> list, int start, int end) {
@@ -23,6 +26,29 @@ public class Testing {
             start++;
         }
         return newList;
+    }
+
+    // O (A + AT) ; A = Size of array, T = Size of the biggest column.
+    private static void printBarchart(int[] cols) {
+        System.out.println(Arrays.toString(cols));
+        int chartHeight = maxColSize(cols);
+        while (chartHeight > 0) {
+            for (int col : cols) {
+                if (col < chartHeight) {
+                    System.out.print("   ");
+                } else {
+                    System.out.print(" * ");
+                }
+            }
+            System.out.println();
+            chartHeight--;
+        }
+    }
+
+    private static int maxColSize(int[] cols) {
+        int max = Integer.MIN_VALUE;
+        for (int col : cols) max = Math.max(col, max);
+        return max;
     }
 
     private static <T> boolean isEmpty(Collection<T> collection) {
