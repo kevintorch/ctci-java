@@ -3,7 +3,8 @@ package hard.Q17_Multi_Search;
 import others.HashMapList;
 
 import java.util.ArrayList;
-import java.util.Iterator;
+
+import static helpers.StringUtil.space;
 
 public class QuestionC {
     public static void main(String[] args) {
@@ -28,10 +29,6 @@ public class QuestionC {
             }
         }
         return lookup;
-    }
-
-    private static String space(int size) {
-        return String.join("", new Spacer(size));
     }
 
     private static ArrayList<String> findStringsAtLoc(TrieNode root, String big, int start) {
@@ -59,31 +56,4 @@ public class QuestionC {
         return trie;
     }
 
-    private static class Spacer implements Iterable<String> {
-        private final int size;
-
-        public Spacer(int size) {
-            this.size = size;
-        }
-
-        @Override
-        public Iterator<String> iterator() {
-            return new SpaceItr();
-        }
-
-        class SpaceItr implements Iterator<String> {
-            int count = 0;
-
-            @Override
-            public boolean hasNext() {
-                return count < size;
-            }
-
-            @Override
-            public String next() {
-                count++;
-                return " ";
-            }
-        }
-    }
 }
