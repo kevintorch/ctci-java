@@ -30,6 +30,10 @@ public class Trie {
         return !exact || lastNode.isTerminates();
     }
 
+    public boolean contains(String prefix) {
+        return contains(prefix, false);
+    }
+
     public TrieNode getRoot() {
         return root;
     }
