@@ -17,7 +17,7 @@ public class QuestionC {
 
     /* Throw all words into one list, sorting by the word then the document. */
     public static ArrayList<Element> sortWords(HashMap<Integer, Document> docs) {
-        ArrayList<Element> elements = new ArrayList<Element>();
+        ArrayList<Element> elements = new ArrayList<>();
         for (Document doc : docs.values()) {
             ArrayList<Integer> words = doc.getWords();
             for (int word : words) {
@@ -40,7 +40,7 @@ public class QuestionC {
 
     /* Adjust the intersection value to become the similarity. */
     public static HashMap<DocPair, Double> computeIntersections(ArrayList<Element> elements) {
-        HashMap<DocPair, Double> similarities = new HashMap<DocPair, Double>();
+        HashMap<DocPair, Double> similarities = new HashMap<>();
 
         for (int i = 0; i < elements.size(); i++) {
             Element left = elements.get(i);
@@ -72,7 +72,7 @@ public class QuestionC {
     public static void main(String[] args) {
         int numDocuments = 10;
         int docSize = 5;
-        HashMap<Integer, Document> documents = new HashMap<Integer, Document>();
+        HashMap<Integer, Document> documents = new HashMap<>();
         for (int i = 0; i < numDocuments; i++) {
             int[] words = AssortedMethods.randomArray(docSize, 0, 10);
             ArrayList<Integer> w = Tester.removeDups(words);

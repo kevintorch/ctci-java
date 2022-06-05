@@ -11,9 +11,7 @@ public class Tester {
         for (int a : array) {
             set.add(a);
         }
-        ArrayList<Integer> list = new ArrayList<>();
-        list.addAll(set);
-        return list;
+        return new ArrayList<>(set);
     }
 
     public static boolean isEqual(HashMap<DocPair, Double> one, HashMap<DocPair, Double> two) {

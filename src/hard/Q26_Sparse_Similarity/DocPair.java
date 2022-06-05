@@ -11,9 +11,7 @@ public class DocPair {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof DocPair)) return false;
-
-        DocPair docPair = (DocPair) o;
+        if (!(o instanceof DocPair docPair)) return false;
 
         if (doc1 != docPair.doc1) return false;
         return doc2 == docPair.doc2;
