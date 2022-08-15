@@ -45,4 +45,13 @@ public class RemoveDuplicates {
             headNode = headNode.next();
         }
     }
+
+    private static void removeDups(LinkedList.Node head) {
+        Set<Object> table = new HashSet<>();
+        LinkedList.Node node = head;
+        while (node != null) {
+
+            node = node.next();
+        }
+    }
 }

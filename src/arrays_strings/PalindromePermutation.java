@@ -4,6 +4,7 @@ package arrays_strings;
 // A palindrome is a word or phrase that is the same forwards and backwards.
 // A permutation is a rearrangement of letters. The palindrome does not need to be limited to just dictionary words.
 
+import java.math.BigInteger;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -13,6 +14,7 @@ import java.util.Set;
 public class PalindromePermutation {
     public static void main(String[] args) {
         String sampleString = "Tact Coa";
+        int i = 'a' ^ 'c';
         boolean isPalindromePermutation = isPalindromePermutationUsingBV(sampleString);
         System.out.println("is \"Tact Coa\" PalindromePermutation: " + isPalindromePermutation);
     }
@@ -35,6 +37,7 @@ public class PalindromePermutation {
     // With Bit Vector.
     public static boolean isPalindromePermutationUsingBV(String str) {
         int bitVector = createBitVector(str);
+        new BigInteger("");
         return bitVector == 0 || checkExactlyOneBitSet(bitVector);
     }
 

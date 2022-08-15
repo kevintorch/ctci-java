@@ -1,7 +1,5 @@
 package big_o;
 
-import java.util.PriorityQueue;
-
 public class SumOfNNumbers {
 
     public static void main(String[] args) {
@@ -13,7 +11,6 @@ public class SumOfNNumbers {
 
     static int sum(int n) {
         if (n <= 0) return 0;
-        PriorityQueue<String> queue = new PriorityQueue<>();
         return n + sum(n - 1);
     }
 

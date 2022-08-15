@@ -38,6 +38,27 @@ public class RotateMatrix {
         System.out.println();
     }
 
+    private static <T> void rotate90(T[][] matrix) {
+        if (matrix.length == 0 || matrix.length != matrix[0].length) return;
+        int len = matrix.length;
+        int levels = len / 2;
+        for (int level = 0; level < levels; level++) {
+            int last = len - 1 - level;
+            for (int i = level; i < last; i++) {
+                int offset = i - level;
+                T top = matrix[level][i];
+
+                matrix[level][i] = matrix[last - offset][level];
+
+                matrix[last - offset][level] = matrix[last][last - offset];
+
+                matrix[last][last - offset] = matrix[i][last];
+
+                matrix[i][last] = top;
+            }
+        }
+    }
+
     @SuppressWarnings("SameParameterValue")
     private static <T> void rotate90(T[][] matrix, boolean clockwise) {
         if (matrix.length == 0 || matrix.length != matrix[0].length) return;
