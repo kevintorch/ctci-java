@@ -7,7 +7,7 @@ package arrays_strings;
 
 import java.util.Arrays;
 
-public class URLify {
+public class Q3_URLify {
 
     public static void main(String[] args) {
         String sampleString = "Hello I Am Karan      ";

@@ -5,7 +5,7 @@ package arrays_strings;
 
 import java.util.Arrays;
 
-public class RotateMatrix {
+public class Q7_RotateMatrix_Extra {
     public static void main(String[] args) {
         Integer[][] vector4x4 = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 16}};
         Character[][] matrix3x3 = {{'A', 'B', 'C'}, {'D', 'E', 'F'}, {'G', 'H', 'I'}};

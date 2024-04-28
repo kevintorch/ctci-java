@@ -2,7 +2,7 @@ package arrays_strings;
 
 import others.AssortedMethods;
 
-public class Rotate {
+public class Q7_Rotate {
 
     /*
      *   2  4  5  6

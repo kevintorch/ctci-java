@@ -6,7 +6,7 @@ package arrays_strings;
 // your method should return the original string.
 // You can assume the string has only uppercase and lowercase letters (a - z).
 
-public class StringCompression {
+public class Q6_StringCompression {
     public static void main(String[] args) {
         String testString = "AaBbCc";
         System.out.println("Compress " + testString + ": " + compress(testString));

@@ -11,7 +11,7 @@ import java.util.Set;
 // EXAMPLE
 // Input: Tact Coa
 // Output: True (permutations: "taco cat", "atco cta", etc.)
-public class PalindromePermutation {
+public class Q4_PalindromePermutation {
     public static void main(String[] args) {
         String sampleString = "Tact Coa";
         int i = 'a' ^ 'c';
@@ -37,7 +37,7 @@ public class PalindromePermutation {
     // With Bit Vector.
     public static boolean isPalindromePermutationUsingBV(String str) {
         int bitVector = createBitVector(str);
-        new BigInteger("");
+//        new BigInteger("");
         return bitVector == 0 || checkExactlyOneBitSet(bitVector);
     }
 

@@ -4,7 +4,7 @@ package arrays_strings;
 // Given two strings, s1 and s2, write code to check if s2 is a rotation of s1 using only one call to isSubString
 // (e.g., "waterbottle" is a rotation of "erbottlewat").
 
-public class StringRotation {
+public class Q9_StringRotation {
     public static void main(String[] args) {
         String sampleString2 = "waterbottle";
         String sampleString1 = "erbottlewat";

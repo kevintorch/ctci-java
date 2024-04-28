@@ -10,7 +10,7 @@ package arrays_strings;
 // pale, bale -> true
 // pale, bake -> false
 
-public class OneAway {
+public class Q5_OneAway {
     public static void main(String[] args) {
         System.out.println("pale, ple: " + oneOrZeroEditsAway("pale", "ple"));
         System.out.println("pales, pale: " + oneOrZeroEditsAway("pales", "pale"));
@@ -35,7 +35,7 @@ public class OneAway {
         int editsAway = 0;
         for (int i = 0; i < s1.length(); i++) {
             int index = i - editsAway;
-            if (index >= s2.length() || s1.charAt(i) != s2.charAt(i - editsAway)) editsAway++;
+            if (index >= s2.length() || s1.charAt(i) != s2.charAt(index)) editsAway++;
             if (editsAway > 1) return false;
         }
         return true;

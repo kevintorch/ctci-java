@@ -3,12 +3,12 @@ package arrays_strings;
 
 //Check Permutation: Given two strings, write a method to decide if one is a permutation of the other.
 
-public class CheckPermutation {
+public class Q2_CheckPermutation {
     public static void main(String[] args) {
 
     }
 
-    // Complexity: O (n2)
+    // Complexity: O (n^2)
     // Assumptions:
     // 1. input string will not contain any spaces. or if it does then it should contain equal spaces in other string.
 
@@ -30,8 +30,8 @@ public class CheckPermutation {
     public static boolean isPermutationOptimized(String str1, String str2) {
         if (str1.length() != str2.length()) return false;
 
-        str1 = UniqueChar.sortSting(str1);
-        str2 = UniqueChar.sortSting(str2);
+        str1 = Q1_UniqueChar.sortSting(str1);
+        str2 = Q1_UniqueChar.sortSting(str2);
 
         return str1.equals(str2);
     }
